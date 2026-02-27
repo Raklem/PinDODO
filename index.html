@@ -56,6 +56,39 @@ h2 {
     border-radius: 10px;
     margin-top: 10px;
 }
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    font-size: 18px;
+    padding: 12px 18px;
+    border: 2px solid #e02e24;
+    border-radius: 10px;
+    background: #fff;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #e02e24;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: none;
+}
+
+#topBtn:hover {
+    background: #c6281e;
+}
 </style>
 </head>
 
@@ -68,8 +101,10 @@ h2 {
 <nav>
     <a href="#download">Скачать</a>
     <a href="#register">Регистрация</a>
-    <a href="#cart">Корзина</a>
-    <a href="#address">Адрес</a>
+    <a href="#cart">Корзина MN</a>
+    <a href="#cart1">Корзина CN</a>
+    <a href="#address">Адрес MN</a>
+    <a href="#address1">Адрес CN</a>
 </nav>
 
 <section id="download">
@@ -141,6 +176,11 @@ h2 {
         <p><b>Шаг 7:</b> При оплате всегда будет коммисия минимум 2Y, добавьте карту и оплачивайте" </p>
         <img src="images/50.jpg" alt="Корзина шаг 10">
 
+    </div>
+</section>
+
+<section id="cart1">
+    <div class="step">
         <h2>Добавление в корзину с платной доставкой</h2>
         <p><b> Иногда товары не доставляются напрямую в Монголию. 
             В таком случае мы используем платную службу доставки.
@@ -184,7 +224,12 @@ h2 {
         <img src="images/20.jpg" alt="Корзина шаг 1">
         <img src="images/62.jpg" alt="Корзина шаг 1">
     
+    </div>
+</section>
+
+<section id="address1"></section>
      <h2>Добавление платного адреса</h2>
+     <div class="step">
         <p><b>Шаг 1:</b> Перейдите в профиль → Адреса.</p>
         <img src="images/10.jpg" alt="Адрес шаг 1">
         <P> Добавление китайского адреса</P>
@@ -222,6 +267,24 @@ h2 {
 </div>
 
 </section>
+<button id="topBtn" onclick="scrollToTop()">↑ Наверх</button>
 
+<script>
+window.onscroll = function() {
+    const btn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
 </body>
 </html>
