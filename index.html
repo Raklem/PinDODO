@@ -89,6 +89,42 @@ p {
 #topBtn:hover {
     background: #c6281e;
 }
+nav {
+    background: white;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Круглые кнопки */
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 20px;
+    text-decoration: none;
+    background: #fff;
+    border: 3px solid #e02e24;
+    border-radius: 10%;
+    font-weight: bold;
+    color: #e02e24;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+/* При нажатии */
+nav a:hover {
+    background: #e02e24;
+    color: white;
+    transform: scale(1.05);
+}
+
 </style>
 </head>
 
@@ -120,9 +156,9 @@ p {
         <p>3. Нажмите "Get" / "Установить".</p>
         <img src="images/4.jpg" alt="Скачать iOS">
             <p><b>Для iPhone:</b></p>
-    <a href="https://apps.apple.com/mn/app/%E6%8B%BC%E5%A4%9A%E5%A4%9A-%E5%A4%9A%E5%A4%9A%E4%B9%B0%E8%8F%9C-%E7%99%BE%E4%BA%BF%E8%A1%A5%E8%B4%B4/id1044283059" target="_blank">
+    <p><a href="https://apps.apple.com/mn/app/%E6%8B%BC%E5%A4%9A%E5%A4%9A-%E5%A4%9A%E5%A4%9A%E4%B9%B0%E8%8F%9C-%E7%99%BE%E4%BA%BF%E8%A1%A5%E8%B4%B4/id1044283059" target="_blank">
         📱 Скачать в App Store
-    </a>
+    </a></p>
     </div>
 
     <div class="step">
@@ -227,7 +263,7 @@ p {
     </div>
 </section>
 
-<section id="address1"></section>
+<section id="address1">
      <h2>Добавление платного адреса</h2>
      <div class="step">
         <p><b>Шаг 1:</b> Перейдите в профиль → Адреса.</p>
@@ -237,9 +273,9 @@ p {
         <P> Сейчас будем заполнять один за другим</P>
         <img src="images/24.jpg" alt="Адрес шаг 1">
         <p><b>Шаг 2:</b> Открываем сайт доставки:</p>
-        <a href="https://www.skylinecargo.mn/" target="_blank">
+        <p><a href="https://www.skylinecargo.mn/" target="_blank">
             Skyline Cargo
-        </a>
+        </a></p>
         <img src="images/21.jpg" alt="Адрес шаг 1">
         <img src="images/22.jpg" alt="Адрес шаг 1">
         <img src="images/23.jpg" alt="Адрес шаг 1">
@@ -270,14 +306,15 @@ p {
 <button id="topBtn" onclick="scrollToTop()">↑ Наверх</button>
 
 <script>
-window.onscroll = function() {
-    const btn = document.getElementById("topBtn");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        btn.style.display = "block";
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
     } else {
-        btn.style.display = "none";
+        topBtn.style.display = "none";
     }
-};
+});
 
 function scrollToTop() {
     window.scrollTo({
